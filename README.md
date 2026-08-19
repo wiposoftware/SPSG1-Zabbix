@@ -11,5 +11,5 @@ This zabbix template is created with Zabbix version 5.2. But you should be ably 
 - create a host in zabbix
 - as host interface use agent and fill in the IP of the SPSG1 device
 - if your SPSG1 has password protection create or change these macros:
-  - {$SHPLGS_USER}  -> fill in admin when using pwd protected S1G3 device
-  - {$SHPLGS_PWD}  -> fill in your S1G3 password.
+  - {$SHPLGS_USER}  -> fill in admin when using pwd protected SPSG1 device
+  - {$SHPLGS_PWD}  -> fill in your SPSG1 password.
