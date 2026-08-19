@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>5.2</version>
-    <date>2026-08-19T09:38:52Z</date>
+    <date>2026-08-19T11:00:19Z</date>
     <groups>
         <group>
             <name>Shelly</name>
@@ -730,6 +730,37 @@ The exact values will be stored for a longer period via the dependend items. In 
                             <type>JSONPATH</type>
                             <parameters>
                                 <parameter>$.relays[0].has_timer</parameter>
+                            </parameters>
+                        </step>
+                        <step>
+                            <type>JAVASCRIPT</type>
+                            <parameters>
+                                <parameter>return value === &quot;true&quot; ? 1 : 0;</parameter>
+                            </parameters>
+                        </step>
+                        <step>
+                            <type>DISCARD_UNCHANGED_HEARTBEAT</type>
+                            <parameters>
+                                <parameter>3600</parameter>
+                            </parameters>
+                        </step>
+                    </preprocessing>
+                    <master_item>
+                        <key>shelly.status.raw</key>
+                    </master_item>
+                </item>
+                <item>
+                    <name>Relay IsOn</name>
+                    <type>DEPENDENT</type>
+                    <key>shelly.switch.ison</key>
+                    <delay>0</delay>
+                    <history>7d</history>
+                    <trends>0</trends>
+                    <preprocessing>
+                        <step>
+                            <type>JSONPATH</type>
+                            <parameters>
+                                <parameter>$.relays[0].ison</parameter>
                             </parameters>
                         </step>
                         <step>
