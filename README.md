@@ -1,7 +1,7 @@
 # SPSG1-Zabbix
 Zabbix template for Shelly Plug S gen 1 device <br/>
 <img width="320" height="241" alt="shellyplugs" src="https://github.com/user-attachments/assets/6ecf131f-3f6d-4862-a05e-d7de4ce28304" />
-<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+<br/><br/><br/><br/><br/>
 Data is read from your Shelly Plug S gen 1 device via HTTP RPC requests.
 
 
